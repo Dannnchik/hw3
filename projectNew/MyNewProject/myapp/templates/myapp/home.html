@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- Ваши стили, если они есть -->
+</head>
+<body>
+    <h1>Добро пожаловать на главную страницу!</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'list_view' %}">Все посты</a></li>
+            <li><a href="{% url 'admin:index' %}">Админка</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

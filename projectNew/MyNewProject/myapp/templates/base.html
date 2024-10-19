@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+<img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}" alt="{{ post.title }}">
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой проект</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Если у вас есть свои стили -->
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Главная</a>
+        <a href="{% url 'post_list' %}">Посты</a>
+        <a href="/admin/">Админка</a>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Мой проект</p>
+    </footer>
+</body>
+</html>

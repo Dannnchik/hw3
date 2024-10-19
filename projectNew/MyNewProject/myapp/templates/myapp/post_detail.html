@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>{{ object.content }}</p>
+<p>Рейтинг: {{ object.rate }}</p>
+<p>Создано: {{ object.created_at }}</p>
+<p>Обновлено: {{ object.updated_at }}</p>
+{% if object.image %}
+    <img src="{{ object.image.url }}" alt="{{ object.title }}">
+{% else %}
+    <img src="{% static 'images/placeholder.png' %}" alt="Заполнитель">
+{% endif %}
+{% endblock %}
